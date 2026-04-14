@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voice Chat</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <h2>VoiceChat</h2>
+
+    <button class="channelBtn active" data-channel="General">🔊 General</button>
+    <button class="channelBtn" data-channel="Juegos">🎮 Juegos</button>
+    <button class="channelBtn" data-channel="Música">🎵 Música</button>
+
+    <div class="user-panel">
+      <strong id="myName"></strong>
+      <p id="connectionStatus">Desconectado</p>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <h1 id="channelTitle">Canal: General</h1>
+      <p>Estado: <span class="status" id="voiceStatus">Fuera de llamada</span></p>
+    </div>
+
+    <div class="users-box">
+      <h3>Usuarios conectados</h3>
+      <div id="users">
+        <p>No estás conectado a un canal de voz.</p>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="joinBtn">Entrar al canal</button>
+      <button id="muteBtn">Silenciar</button>
+	  <button id="deafenBtn">Ensordecer</button>
+      <button id="leaveBtn">Salir</button>
+    </div>
+
+    <div id="audioContainer"></div>
+  </main>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
